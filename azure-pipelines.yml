@@ -3,16 +3,20 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+
 trigger:
 - main
 
+resources:
+  repositories:
+  - repository: githubRepo
+    type: github
+    name: marekzmyslowski/testrepo
+    endpoint: MyGitHubServiceConnection  # Name of the GitHub service connection
+
 pool: Default
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+steps:
+- checkout: githubRepo
+- script: echo "Checked out code from GitHub using service connection"
