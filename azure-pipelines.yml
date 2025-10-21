@@ -13,6 +13,7 @@ resources:
     type: github
     name: marekzmyslowski/testrepo
     endpoint: MyGitHubServiceConnection  # Name of the GitHub service connection
+    password: dXNlcjpwYSQkd29yZA== #this is base64 slang for 'user:pa$$word'
 
 pool: Default
 
